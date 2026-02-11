@@ -1,0 +1,139 @@
+POST http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "firstName" : "debbadwar",
+    "lastName" : "baswaraj",
+    "email" : "bunny123@gmail.com",
+    "password" : "bunny123",
+    "profileImageUrl" : "http://example.image"
+}
+###
+POST http://localhost:4000/user-api/authenticate
+Content-Type: application/json
+
+{
+    "email" : "bunny123@gmail.com",
+    "password" : "bunny123",
+    "role" : "USER"
+
+}
+
+###
+POST http://localhost:4000/author-api/users
+Content-Type: application/json
+
+{
+    "firstName" : "bukka",
+    "lastName" : "saketh",
+    "email" : "saket123@gmail.com",
+    "password" : "saketh123",
+    "profileImageUrl" : "http://example.image"
+}
+
+###
+POST http://localhost:4000/author-api/authenticate
+Content-Type: application/json
+
+{
+  //  {email,password,role
+    "email" : "saket123@gmail.com",
+    "password" : "saketh123",
+    "role" : "AUTHOR"
+}
+
+###
+# author title category content
+POST http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+    "author" : "6989b1e605b833e8f575987c",
+    "title" : "MERN",
+    "category": "Programming",
+    "content" : "M = MONGODB , E = EXPRESS , R = REACT.JS , N = NODE.JS"
+}
+
+###
+GET http://localhost:4000/author-api/articles/6989b1e605b833e8f575987c
+
+
+###
+PUT http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+    "author" : "6989b1e605b833e8f575987c",
+    "articleId" : "6989b25505b833e8f5759881",
+    "title" : "MERN",
+    "category": "Programming",
+    "content" : "M = MONGODB , E = EXPRESS , R = REACT.JS , N = NODE.JS"
+}
+###
+
+PUT http://localhost:4000/author-api/articles-delete
+Content-Type: application/json
+
+{
+    "articleId" :"6989b25505b833e8f5759881",
+    "authorId" : "6989b1e605b833e8f575987c"
+}
+
+###
+PUT http://localhost:4000/user-api/comments
+Content-Type: application/json
+
+
+{
+    "articleId" : "6989b25505b833e8f5759881"
+
+}
+###
+GET  http://localhost:4000/user-api/articles
+###
+
+POST http://localhost:4000/common-api/login
+Content-Type: application/json
+
+{
+    "email" : "bunny123@gmail.com",
+    "password" : "bunny@123"
+
+}
+
+
+###
+
+GET  http://localhost:4000/common-api/logout
+
+
+###
+GET http://localhost:4000/test
+###
+GET http://localhost:4000/hello
+
+###
+PUT http://localhost:4000/admin-api/block
+Content-Type: application/json
+
+{
+    "authorId" : "6989b1ce05b833e8f575987a"
+}
+
+###
+PUT http://localhost:4000/admin-api/unblock
+Content-Type: application/json
+
+{
+    "authorId" : "6989b1ce05b833e8f575987a"
+}
+
+###
+PUT http://localhost:4000/common-api/password-update
+Content-Type: application/json
+
+{
+    "email" : "bunny123@gmail.com",
+    "currentPassword" : "bunny@123",
+    "newPassword" : "bunny@1234"
+}
