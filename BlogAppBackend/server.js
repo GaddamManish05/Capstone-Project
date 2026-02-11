@@ -8,16 +8,21 @@ import {authorApp} from './Apis/AuthorApi.js'
 import { commonApp } from './Apis/Common-api.js'
 
 config()
-
+// create a http server
 const app = exp()
+// create a predefinded middleware for body parsing
 app.use(exp.json())
+// create a cookie parser for cookie
 app.use(cookieParser())
 //connect api's
 app.use('/user-api',userApp);
+// author route
 app.use('/author-api',authorApp);
+// admin routes
 app.use('/admin-api',adminApp);
+// common api routes 
 app.use('/common-api',commonApp)
-
+// create a connection to db 
 const connectDB = async() => {
     try{
         await connect(process.env.DB_URL);
@@ -30,6 +35,7 @@ const connectDB = async() => {
     }
 }
 connectDB()
+// logout route for all users
 app.post('/logout',(req,res) => {
     res.clearCookie('token',{
         httpOnly : true,
@@ -38,11 +44,11 @@ app.post('/logout',(req,res) => {
     });
     res.status(200).json({message : "Logout Successful"})
 })
+// middleware for invalid address path
 app.use((req,res,next) => {
     res.json({message : `${req.url} is Invalid Path`})
 })
-
-
+// error handling middleware 
 app.use((err,req,res,next) => {
     res.json({message : "Error Found",reason : err.message});
 })
