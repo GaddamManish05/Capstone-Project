@@ -1,0 +1,62 @@
+GET http://localhost:3000/product-api/products
+
+###
+POST http://localhost:3000/product-api/products
+Content-Type: application/json
+
+{
+    "productname" : "hairSerum",
+    "price" : 2000,
+    "brand" : "molecular"
+}
+
+
+###
+DELETE http://localhost:4000/product-api/product
+
+
+
+###
+GET http://localhost:3000/user-api/users
+
+
+###
+
+POST  http://localhost:3000/user-api/users
+Content-Type: application/json
+
+{
+    "name" : "rohit",
+    "email" : "rohit@gmail.com",
+    "password" : "mabbu",
+    "cart" : []
+}
+
+###
+PUT http://localhost:3000/user-api/user/698075fe9cfb7043ce51318a
+Content-Type: application/json
+
+{
+    "name" : "baswaraj",
+    "email":"bunny123@gmail.com",
+    "password":"bunny123",
+    "cart" : []
+}
+
+###
+PUT http://localhost:3000/user-api/user-cart/user-id/698caef64cd4a89c4b71342e/product-id/698caf9d4cd4a89c4b713433
+
+###
+GET http://localhost:3000/user-api/user/698075fe9cfb7043ce51318a
+
+###
+DELETE http://localhost:3000/user-api/user-cart/user-id/698caef64cd4a89c4b71342e/product-id/698caf9d4cd4a89c4b713433
+
+####
+
+PUT http://localhost:3000/product-api/product/698caf9d4cd4a89c4b713433
+Content-Type: application/json
+
+{
+    "productname" : "hair oil"
+}

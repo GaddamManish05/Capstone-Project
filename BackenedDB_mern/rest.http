@@ -1,0 +1,69 @@
+GET http://localhost:4000/user-api/users
+
+
+
+### get by id
+GET http://localhost:4000/user-api/user/697dbbd168c9e851cf825f2e
+### Create User
+POST http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "username" : "bunny",
+    "password" : "bunny123",
+    "age" : 20
+}
+### User authentication (login) req
+POST http://localhost:4000/user-api/auth
+Content-Type: application/json
+
+{
+    "username" : "bunny",
+    "password" : "bunny123"
+}
+
+
+### Create Put Route
+
+PUT http://localhost:4000/user-api/user/697dbbd168c9e851cf825f2e
+Content-Type: application/json
+
+{
+    "username" : "ravi",
+    "password" : "ashok123",
+    "age" : 20
+}
+### DELETE
+DELETE http://localhost:4000/user-api/user/697dc6003baa5c18d09b6b34
+
+### req for protected route
+GET http://localhost:4000/user-api/test
+
+###
+GET http://localhost:4000/product-api/products
+
+
+###
+POST http://localhost:4000/product-api/products
+Content-Type: application/json
+
+{
+    "pid" : 101,
+    "productname" : "Laptop",
+    "price" : 1000
+}
+
+###
+GET http://localhost:4000/product-api/product/697dd0962c040dbd3f7d35f8
+
+
+###
+
+PUT http://localhost:4000/product-api/product/697dd0962c040dbd3f7d35f8
+Content-Type: application/json
+
+{
+    "pid" : 101,
+    "productname" : "phone",
+    "price" : 500
+}
