@@ -1,0 +1,20 @@
+body {
+    background-color: #e8dfd2;
+    font-family: Arial, sans-serif;
+    width: 700px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+h2 {
+    color: #c95b2b;
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+}
